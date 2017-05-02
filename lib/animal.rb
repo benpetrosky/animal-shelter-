@@ -21,6 +21,7 @@ class Animal
     DB.exec("INSERT INTO animals (animal_name, list_id) VALUES ('#{@animal_name}', #{@list_id});")
   end
 
+
   define_method(:==) do |another_animal|
     self.animal_name().==(another_animal.animal_name()).&(self.list_id().==(another_animal.list_id()))
   end

@@ -1,17 +1,6 @@
-require('rspec')
-require('animal')
-require('pg')
-
-DB = PG.connect({:dbname => 'animal_test'})
-
-RSpec.configure do |config|
-  config.after(:each) do
-    DB.exec("DELETE FROM animals *;")
-  end
-end
+require("spec_helper")
 
 describe(Animal) do
-  #tests are her
 
   describe(".all") do
     it('is empty at first') do
@@ -29,15 +18,15 @@ describe(Animal) do
 
   describe("#animal_name") do
     it("lets you read the animal name") do
-      test_animal = Animal.new({:animal_name => "Fido", :list_id => 1})
-      expect(Animal.all()).to(eq("Fido"))
+      test_animal = Animal.new(({:animal_name => "Fido", :list_id => 1}))
+      expect(test_animal.animal_name()).to(eq("Fido"))
     end
   end
 
   describe("#list_id") do
     it("lets you read the animal ID out") do
       test_animal = Animal.new({:animal_name => "Fido", :list_id => 1})
-      expect(test_animal.id()).to(eq(1))
+      expect(test_animal.list_id()).to(eq(1))
     end
   end
 
