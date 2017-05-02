@@ -1,6 +1,6 @@
 
 class Animal_List
-  attr_reader(:animal_name, :id)
+  attr_reader(:animal_name, :id, :breed)
 
   define_method(:initialize) do |attributes|
     @animal_name = attributes.fetch(:animal_name)
