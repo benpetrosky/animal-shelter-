@@ -1,0 +1,13 @@
+<h1>Animal Shelter</h1>
+
+<ul>
+  <% @animals.each() do |animal| %>
+  <li><a href="/animals/<% animal.id()%>"><%= animal.animal_name() %></a></li>
+  <% end %>
+</ul>
+
+<a href="/animal_attributes"> See details</a>
+
+<a href="/add_animal_form/new">Add a new animal</a>
+
+<p><a href="/" >Back to Home</a></p>

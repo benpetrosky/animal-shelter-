@@ -1,0 +1,12 @@
+<h1>Animal Info:</h1>
+<ul>
+  <% @animals.each() do |animal| %>
+  <li><%= animal.animal_name() %></li>
+  <li><%= animal.animal_gender() %></li>
+  <li><%= animal.animal_arrival_date() %></li>
+  <li><%= animal.type %></li>
+  <li><%= animal.breed() %></li>
+  <% end %>
+</ul>
+
+<a href="/">Back To Home</a>
